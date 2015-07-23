@@ -21,19 +21,13 @@ describe '.order' do
     end
   end
 
-  context 'parameter is nil' do
-    it 'return empty hash' do
-      expect( order( nil ) ).to eq( {} )
-    end
-  end
-
 end
 
 describe '.print_result' do
 
   context 'hash is provided' do
     it 'print result' do
-      expect{ print_result( {'q'=>1, '1'=>2, 'w'=>2, 'e'=>1, '5'=>2, 'r'=>3, 't'=>2, '3'=>4, 'y'=>5} ) }.to output( "ch:num\nq : 1\n1 : 2\nw : 2\ne : 1\n5 : 2\nr : 3\nt : 2\n3 : 4\ny : 5\n" ).to_stdout
+      expect{ print_result( {'q'=>1, '1'=>2, 'w'=>2, 'e'=>1, '5'=>2, 'r'=>3, 't'=>2, '3'=>4, 'y'=>5} ) }.to output( "q , 1\n1 , 2\nw , 2\ne , 1\n5 , 2\nr , 3\nt , 2\n3 , 4\ny , 5\n" ).to_stdout
     end
   end
 
@@ -61,8 +55,8 @@ describe '.order_and_print' do
 
   context 'string is provided' do
     it 'count each character and print result' do
-      expect{ order_and_print( 'q11wwe55rrrtt3333yyyyy' ) }.to output( "ch:num\nq : 1\n1 : 2\nw : 2\ne : 1\n5 : 2\nr : 3\nt : 2\n3 : 4\ny : 5\n" ).to_stdout
-      expect{ order_and_print( 'yqw88yw5rety8ryr2t2yy' ) }.to output( "ch:num\ny : 6\nq : 1\nw : 2\n8 : 3\n5 : 1\nr : 3\ne : 1\nt : 2\n2 : 2\n" ).to_stdout
+      expect{ order_and_print( 'q11wwe55rrrtt3333yyyyy' ) }.to output( "1 , 2\n3 , 4\n5 , 2\ne , 1\nq , 1\nr , 3\nt , 2\nw , 2\ny , 5\n" ).to_stdout
+      expect{ order_and_print( 'yqw88yw5rety8ryr2t2yy' ) }.to output( "2 , 2\n5 , 1\n8 , 3\ne , 1\nq , 1\nr , 3\nt , 2\nw , 2\ny , 6\n" ).to_stdout
     end
   end
 
@@ -75,12 +69,6 @@ describe '.order_and_print' do
   context 'parameter is absent' do
     it 'print message' do
       expect{ order_and_print( '' ) }.to output( "nothing to print\n" ).to_stdout
-    end
-  end
-
-  context 'parameter is nil' do
-    it 'print message' do
-      expect{ order_and_print( nil ) }.to output( "nothing to print\n" ).to_stdout
     end
   end
 

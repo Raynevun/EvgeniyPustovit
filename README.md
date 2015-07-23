@@ -1,3 +1,12 @@
+#Run Application#
+
+To run all tests and app, please print command "rake". By default all
+spec tests will run and then actually application.
+You could also run tests and application separate. For this purpose 
+please define what would you like to run as a parameter:
+for application - "rake app"
+for tests - "rake test"
+
 #Introduction#
 
 DevOps is about managing production environments at large scale -- deep
