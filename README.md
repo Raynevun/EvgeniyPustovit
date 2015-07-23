@@ -1,7 +1,8 @@
 #Run Application#
 
-To run all tests and app, please print command "rake". By default all
-spec tests will run and then actually application.
+To run all tests and app, please navigate to project directory and print 
+command "rake" in terminal. By default all spec tests will run and then 
+actually application.
 You could also run tests and application separate. For this purpose 
 please define what would you like to run as a parameter:
 for application - "rake app"
