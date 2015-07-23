@@ -35,12 +35,4 @@ class BeaconAPI
     Nori.new.parse( @response_raw.body )
   end
 
-  # uri = URI('https://beacon.nist.gov/rest/record')
-  # res = Net::HTTP.get_response(URI(uri.to_s + '/last'))
-  # xml_res = Nori.new.parse( res.body )
-  #
-  # puts 'res'
-  # print xml_res[ 'record' ][ 'outputValue' ]
-  # puts '/res'
-
 end

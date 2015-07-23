@@ -7,6 +7,4 @@ api = BeaconAPI.new
 api.get_response
 api.get_param
 
-puts api.value
-
-api.value.order_and_print
+order_and_print( api.value )
