@@ -5,8 +5,8 @@ command "rake" in terminal. By default all spec tests will run and then
 actually application.
 You could also run tests and application separate. For this purpose 
 please define what would you like to run as a parameter:
-for application - "rake app"
-for tests - "rake test"
+* for application - "rake app"
+* for tests - "rake test"
 
 #Introduction#
 
