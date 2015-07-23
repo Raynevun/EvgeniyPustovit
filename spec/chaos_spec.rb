@@ -4,8 +4,8 @@ describe '.order' do
 
   context 'string is provided' do
     it 'count each character' do
-      expect( order( 'q11wwe55rrrtt3333yyyyy' ) ).to eq( {"q"=>1, "1"=>2, "w"=>2, "e"=>1, "5"=>2, "r"=>3, "t"=>2, "3"=>4, "y"=>5} )
-      expect( order( 'yqw88yw5rety8ryr2t2yy' ) ).to eq( {"y"=>6, "q"=>1, "w"=>2, "8"=>3, "5"=>1, "r"=>3, "e"=>1, "t"=>2, "2"=>2} )
+      expect( order( 'q11wwe55rrrtt3333yyyyy' ) ).to eq( {'q'=>1, '1'=>2, 'w'=>2, 'e'=>1, '5'=>2, 'r'=>3, 't'=>2, '3'=>4, 'y'=>5} )
+      expect( order( 'yqw88yw5rety8ryr2t2yy' ) ).to eq( {'y'=>6, 'q'=>1, 'w'=>2, '8'=>3, '5'=>1, 'r'=>3, 'e'=>1, 't'=>2, '2'=>2} )
     end
   end
 
@@ -33,7 +33,7 @@ describe '.print_result' do
 
   context 'hash is provided' do
     it 'print result' do
-      expect{ print_result( {"q"=>1, "1"=>2, "w"=>2, "e"=>1, "5"=>2, "r"=>3, "t"=>2, "3"=>4, "y"=>5} ) }.to output( "ch:num\nq : 1\n1 : 2\nw : 2\ne : 1\n5 : 2\nr : 3\nt : 2\n3 : 4\ny : 5\n" ).to_stdout
+      expect{ print_result( {'q'=>1, '1'=>2, 'w'=>2, 'e'=>1, '5'=>2, 'r'=>3, 't'=>2, '3'=>4, 'y'=>5} ) }.to output( "ch:num\nq : 1\n1 : 2\nw : 2\ne : 1\n5 : 2\nr : 3\nt : 2\n3 : 4\ny : 5\n" ).to_stdout
     end
   end
 

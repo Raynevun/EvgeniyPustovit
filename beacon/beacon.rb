@@ -9,7 +9,6 @@ class BeaconAPI
 
   BASE_URL = 'https://beacon.nist.gov/rest/record'
 
-
   def initialize( default_function = '/last', default_param = 'outputValue' )
     @url = BASE_URL
     @func = default_function
@@ -18,11 +17,11 @@ class BeaconAPI
 
   def get_response( func = @func )
     @response_raw = request( func )
-    @response = parse_response
+    @response = parse_response[ 'record' ]
   end
 
   def get_param( param = @param )
-    @value = @response[ 'record' ][ param ] if @response
+    @value = @response[ param ] if @response
   end
 
   private
