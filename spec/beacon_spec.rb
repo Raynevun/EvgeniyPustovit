@@ -113,7 +113,26 @@ describe 'BeaconAPI' do
 
   context '.get_param' do
     context 'with valid response' do
-
+      context 'get default param' do
+        before :all do
+          @beacon = BeaconAPI.new
+          @beacon.get_response
+        end
+        it 'return @outputValue' do
+          expect( @beacon.get_param ).to eq( @beacon.response[ 'outputValue' ] )
+        end
+      end
+      context 'get each param' do
+        before :all do
+          @beacon = BeaconAPI.new
+          @beacon.get_response
+        end
+        it 'return each param' do
+          @beacon.response.each_key do | key |
+            expect( @beacon.get_param( key ) ).to eq( @beacon.response[ key ] )
+          end
+        end
+      end
     end
     context 'with invalid response - nil' do
       before :all do
